@@ -24,8 +24,6 @@ body {
 
 }
 
-
-
 #id_title{
   background-color: #303245;
   border-radius: 12px;
@@ -53,10 +51,6 @@ body {
   height: 100%;
   width: 100%;
 
-}
-
-#id_label{
-  font-size: 40px;
 }
 
 

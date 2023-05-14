@@ -17,7 +17,10 @@ def home_page(request):
 
 
 def upload_image(request):
-    Picture.objects.all().delete()
+    data = Picture.objects.all()
+    if data:
+        os.remove("C:/Users/Stas/Desktop/django project/face_detection_api/face_detection_api/" + data[0].photo.url)
+    data.delete()
     if request.method == 'POST':
         form = ImageUploadForm(request.POST, request.FILES)
         if form.is_valid():
@@ -35,8 +38,6 @@ def detect_faces(path):
     cv2.imwrite(detect_image_path, cv2.cvtColor(detect_image, cv2.COLOR_RGB2BGR))
 
     Picture.objects.create(title='Распознанное фото', photo='out/detect_img.jpg')
-
-    return detect_image_path
 
 
 

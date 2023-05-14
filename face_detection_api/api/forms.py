@@ -7,10 +7,6 @@ class ImageUploadForm(forms.ModelForm):
         model = Picture
         fields = ['title', 'photo']
         labels = {
-            "title": "ghdfgdhfghgdhf",
+            "title": "",
             "photo": ""
-        }
-        widgets = {
-            'title': forms.TextInput(attrs={'class': 'form-title', 'font-size': '40px', 'color': '#eee'}),
-            # 'photo': forms.ImageField(attrs={'class': 'form-photo', 'font-size': '40px', 'color': '#eee'})
         }
